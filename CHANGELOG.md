@@ -1,3 +1,8 @@
 ## 0.0.1
 
-* TODO: Describe initial release.
+- Simple and elegant design
+- Easy to integrate and customize
+- Built-in support for navigation items
+- Lightweight and efficient
+- Custom icons and color themes
+- Currently supports up to **3 items**
