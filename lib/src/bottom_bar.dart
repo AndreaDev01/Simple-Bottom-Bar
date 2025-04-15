@@ -4,11 +4,11 @@ import '../simple_bottom_bar.dart';
 
 
 class BottomBar extends StatefulWidget {
-  var on_change;
-  int selected;
-  List<MenuItem> widgets;
-  BottomBarConfig bottomBarConfig;
-  BottomBar({required this.on_change, required this.selected, required this.widgets, required this.bottomBarConfig});
+  final void Function(dynamic) on_change;
+  final int selected;
+  final List<MenuItem> widgets;
+  final BottomBarConfig bottomBarConfig;
+  const BottomBar({super.key, required this.on_change, required this.selected, required this.widgets, required this.bottomBarConfig});
 
   @override
   State<BottomBar> createState() => _BottomBarState(this.on_change, this.selected, this.widgets, this.bottomBarConfig);

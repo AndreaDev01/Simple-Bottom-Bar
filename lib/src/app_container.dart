@@ -4,11 +4,11 @@ import 'package:simple_bottom_bar/src/menu_item.dart';
 import '../simple_bottom_bar.dart';
 
 class AppContainer extends StatefulWidget {
-  AppBar? appBar;
-  List<MenuItem> widgets;
-  BottomBarConfig bottomBarConfig;
+  final AppBar? appBar;
+  final List<MenuItem> widgets;
+  final BottomBarConfig bottomBarConfig;
 
-  AppContainer({super.key, required this.widgets, this.appBar = null, required this.bottomBarConfig});
+  const AppContainer({super.key, required this.widgets, this.appBar, required this.bottomBarConfig});
 
   @override
   State<AppContainer> createState() => _AppContainerState(this.widgets, this.appBar, this.bottomBarConfig);
