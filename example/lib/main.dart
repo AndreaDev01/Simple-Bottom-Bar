@@ -32,15 +32,18 @@ class _MyHomePageState extends State<MyHomePage> {
 
   List<MenuItem> widgets =[
     MenuItem(index: 0, text: "Home Page", icon: Icons.home, widget: Container(child: Text("Home page"),)),
-    MenuItem(index: 0, text: "Account", icon: Icons.people, widget: Container(child: Text("Account"),)),
-    MenuItem(index: 0, text: "Settings", icon: Icons.settings, widget: Container(child: Text("Settings"),)),
+    MenuItem(index: 1, text: "Account", icon: Icons.people, widget: Container(child: Text("Account"),)),
+    MenuItem(index: 2, text: "Settings", icon: Icons.settings, widget: Container(child: Text("Settings"),)),
   ];
 
   @override
   Widget build(BuildContext context) {
     return AppContainer(
         widgets: widgets,
-        backgroundColor: Colors.green.withOpacity(0.5)
+        bottomBarConfig: BottomBarConfig(
+            active_card_color: Colors.blue.withOpacity(0.5),
+            icons_color: Colors.blue.withOpacity(0.5),
+            active_icon_color: Colors.white, textStyle: TextStyle(color: Colors.white)),
     );
   }
 }
