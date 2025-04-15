@@ -6,3 +6,6 @@
 - Lightweight and efficient
 - Custom icons and color themes
 - Currently supports up to **3 items**
+
+## 0.0.2
+- Bug fix and correct changelog
