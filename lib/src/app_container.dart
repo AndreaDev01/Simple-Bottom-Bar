@@ -6,22 +6,20 @@ import '../simple_bottom_bar.dart';
 class AppContainer extends StatefulWidget {
   AppBar? appBar;
   List<MenuItem> widgets;
-  TextStyle textStyle;
-  Color backgroundColor;
+  BottomBarConfig bottomBarConfig;
 
-  AppContainer({super.key, required this.widgets, required this.backgroundColor, this.textStyle = const TextStyle(), this.appBar = null});
+  AppContainer({super.key, required this.widgets, this.appBar = null, required this.bottomBarConfig});
 
   @override
-  State<AppContainer> createState() => _AppContainerState(this.widgets, this.backgroundColor, this.textStyle, this.appBar);
+  State<AppContainer> createState() => _AppContainerState(this.widgets, this.appBar, this.bottomBarConfig);
 }
 
 class _AppContainerState extends State<AppContainer> {
   AppBar? appBar;
   List<MenuItem> widgets;
-  TextStyle textStyle;
-  Color backgroundColor;
+  BottomBarConfig bottomBarConfig;
 
-  _AppContainerState(this.widgets, this.backgroundColor, this.textStyle, this.appBar);
+  _AppContainerState(this.widgets, this.appBar, this.bottomBarConfig);
 
   int index_selected = 0;
 
@@ -41,7 +39,9 @@ class _AppContainerState extends State<AppContainer> {
                 setState(() {
                   index_selected = index;
                 });
-              }, selected: index_selected, widgets: widgets, background_color: this.backgroundColor, textStyle: this.textStyle,),
+              }, selected: index_selected, widgets: widgets,
+                bottomBarConfig: bottomBarConfig,
+              ),
             )
           ],
         ),

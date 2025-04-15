@@ -7,21 +7,19 @@ class BottomBar extends StatefulWidget {
   var on_change;
   int selected;
   List<MenuItem> widgets;
-  TextStyle textStyle;
-  Color background_color;
-  BottomBar({required this.on_change, required this.selected, required this.widgets, this.textStyle = const TextStyle(), required this.background_color});
+  BottomBarConfig bottomBarConfig;
+  BottomBar({required this.on_change, required this.selected, required this.widgets, required this.bottomBarConfig});
 
   @override
-  State<BottomBar> createState() => _BottomBarState(this.on_change, this.selected, this.widgets, this.textStyle, this.background_color);
+  State<BottomBar> createState() => _BottomBarState(this.on_change, this.selected, this.widgets, this.bottomBarConfig);
 }
 
 class _BottomBarState extends State<BottomBar> {
   var on_change;
   int selected;
   List<MenuItem> widgets;
-  TextStyle titleStyle;
-  Color background_color;
-  _BottomBarState(this.on_change, this.selected, this.widgets, this.titleStyle, this.background_color);
+  BottomBarConfig bottomBarConfig;
+  _BottomBarState(this.on_change, this.selected, this.widgets, this.bottomBarConfig);
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +31,7 @@ class _BottomBarState extends State<BottomBar> {
           color: Colors.white,
           borderRadius: BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20)),
           boxShadow: [BoxShadow(
-            color: background_color,
+            color: bottomBarConfig.active_card_color,
             offset: Offset(0, -2),
             blurRadius: 10,
           )],
@@ -67,15 +65,15 @@ class _BottomBarState extends State<BottomBar> {
                     duration: Duration(milliseconds: 300),
                     padding: EdgeInsets.symmetric(vertical: 15, horizontal: 25),
                     decoration: BoxDecoration(
-                      color: background_color,
+                      color: bottomBarConfig.active_card_color,
                       borderRadius: BorderRadius.all(Radius.circular(50)),
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Image.asset(menu_item.icon, height: 25),
+                        Icon(menu_item.icon, size: 25, color: bottomBarConfig.active_icon_color,),
                         SizedBox(width: 15),
-                        Text(menu_item.text, style: titleStyle),
+                        Text(menu_item.text, style: bottomBarConfig.textStyle),
                       ],
                     ),
                   )
@@ -83,7 +81,7 @@ class _BottomBarState extends State<BottomBar> {
                     key: ValueKey("unselected_${menu_item.index}"),
                     duration: Duration(milliseconds: 300),
                     padding: EdgeInsets.all(10),
-                    child: Image.asset(menu_item.icon, height: 30, width: 30),
+                    child: Icon(menu_item.icon, size: 30, color: bottomBarConfig.icons_color,),
                   ),
                 ),
               );
