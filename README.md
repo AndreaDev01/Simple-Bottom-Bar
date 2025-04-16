@@ -6,6 +6,12 @@ A clean and customizable bottom navigation bar for Flutter applications.
 
 ---
 
+## 📽️ Demo
+
+![Demo](https://raw.githubusercontent.com/AndreaDev01/Simple-Bottom-Bar/main/example/assets/demo.gif)
+
+---
+
 ## ✨ Features
 
 - Simple and elegant design
