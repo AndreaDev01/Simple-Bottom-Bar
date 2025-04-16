@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:simple_bottom_bar/src/menu_item.dart';
-
 import '../simple_bottom_bar.dart';
 
 class AppContainer extends StatefulWidget {
@@ -21,7 +19,7 @@ class _AppContainerState extends State<AppContainer> {
 
   _AppContainerState(this.widgets, this.appBar, this.bottomBarConfig);
 
-  int index_selected = 0;
+  int indexSelected = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -32,14 +30,14 @@ class _AppContainerState extends State<AppContainer> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            widgets[index_selected].widget,
+            widgets[indexSelected].widget,
             Container(
               color: Colors.white,
               child: BottomBar(on_change: (index){
                 setState(() {
-                  index_selected = index;
+                  indexSelected = index;
                 });
-              }, selected: index_selected, widgets: widgets,
+              }, selected: indexSelected, widgets: widgets,
                 bottomBarConfig: bottomBarConfig,
               ),
             )
