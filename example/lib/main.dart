@@ -39,6 +39,10 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return AppContainer(
+      appBar: AppBar(
+        backgroundColor: Colors.blue,
+        title: Text("Simple bottom bar example", style: TextStyle(color: Colors.white),),
+      ),
         widgets: widgets,
         bottomBarConfig: BottomBarConfig(
             activeCardColor: Colors.blue.withOpacity(0.5),
