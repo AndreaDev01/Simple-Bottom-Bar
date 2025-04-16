@@ -9,3 +9,7 @@
 
 ## 0.0.2
 - Bug fix and correct changelog
+
+## 0.0.3
+- Fix best practices and adding documentation for the objects
+- Add appbar to example
