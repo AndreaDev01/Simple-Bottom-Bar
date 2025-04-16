@@ -2,36 +2,45 @@ import 'package:flutter/material.dart';
 import 'package:simple_bottom_bar/src/utils.dart';
 import '../simple_bottom_bar.dart';
 
-
+/// A widget for implement the bottom bar
 class BottomBar extends StatefulWidget {
-  final void Function(dynamic) on_change;
+  /// the action to execute on change
+  final void Function(dynamic) onChange;
+  /// the index selected
   final int selected;
+
+  /// list of [MenuItem] to display
   final List<MenuItem> widgets;
+
+  /// config for styling of bottomBar
   final BottomBarConfig bottomBarConfig;
-  const BottomBar({super.key, required this.on_change, required this.selected, required this.widgets, required this.bottomBarConfig});
+
+
+  /// A widget for implement the bottom bar
+  const BottomBar({super.key, required this.onChange, required this.selected, required this.widgets, required this.bottomBarConfig});
 
   @override
-  State<BottomBar> createState() => _BottomBarState(this.on_change, this.selected, this.widgets, this.bottomBarConfig);
+  State<BottomBar> createState() => _BottomBarState(this.onChange, this.selected, this.widgets, this.bottomBarConfig);
 }
 
 class _BottomBarState extends State<BottomBar> {
-  var on_change;
+  final void Function(dynamic) onChange;
   int selected;
   List<MenuItem> widgets;
   BottomBarConfig bottomBarConfig;
-  _BottomBarState(this.on_change, this.selected, this.widgets, this.bottomBarConfig);
+  _BottomBarState(this.onChange, this.selected, this.widgets, this.bottomBarConfig);
 
   @override
   Widget build(BuildContext context) {
     return Container(
         margin: EdgeInsets.only(bottom: 15),
         alignment: Alignment.center,
-        height: heigth_bottom_bar,
+        height: heigthBottomBar,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20)),
           boxShadow: [BoxShadow(
-            color: bottomBarConfig.active_card_color,
+            color: bottomBarConfig.activeCardColor,
             offset: Offset(0, -2),
             blurRadius: 10,
           )],
@@ -44,7 +53,7 @@ class _BottomBarState extends State<BottomBar> {
             children: widgets.map((menu_item) {
               return GestureDetector(
                 onTap: () {
-                  on_change(menu_item.index);
+                  onChange(menu_item.index);
                   setState(() {
                     selected = menu_item.index;
                   });
@@ -65,13 +74,13 @@ class _BottomBarState extends State<BottomBar> {
                     duration: Duration(milliseconds: 300),
                     padding: EdgeInsets.symmetric(vertical: 15, horizontal: 25),
                     decoration: BoxDecoration(
-                      color: bottomBarConfig.active_card_color,
+                      color: bottomBarConfig.activeCardColor,
                       borderRadius: BorderRadius.all(Radius.circular(50)),
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(menu_item.icon, size: 25, color: bottomBarConfig.active_icon_color,),
+                        Icon(menu_item.icon, size: 25, color: bottomBarConfig.activeIconColor,),
                         SizedBox(width: 15),
                         Text(menu_item.text, style: bottomBarConfig.textStyle),
                       ],
@@ -81,7 +90,7 @@ class _BottomBarState extends State<BottomBar> {
                     key: ValueKey("unselected_${menu_item.index}"),
                     duration: Duration(milliseconds: 300),
                     padding: EdgeInsets.all(10),
-                    child: Icon(menu_item.icon, size: 30, color: bottomBarConfig.icons_color,),
+                    child: Icon(menu_item.icon, size: 30, color: bottomBarConfig.iconsColor,),
                   ),
                 ),
               );

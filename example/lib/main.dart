@@ -41,9 +41,9 @@ class _MyHomePageState extends State<MyHomePage> {
     return AppContainer(
         widgets: widgets,
         bottomBarConfig: BottomBarConfig(
-            active_card_color: Colors.blue.withOpacity(0.5),
-            icons_color: Colors.blue.withOpacity(0.5),
-            active_icon_color: Colors.white, textStyle: TextStyle(color: Colors.white)),
+            activeCardColor: Colors.blue.withOpacity(0.5),
+            iconsColor: Colors.blue.withOpacity(0.5),
+            activeIconColor: Colors.white, textStyle: TextStyle(color: Colors.white)),
     );
   }
 }
