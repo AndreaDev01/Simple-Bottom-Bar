@@ -29,11 +29,25 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
-  List<MenuItem> widgets =[
-    MenuItem(index: 0, text: "Home Page", icon: Icons.home, widget: Container(child: Text("Home page"),)),
-    MenuItem(index: 1, text: "Account", icon: Icons.people, widget: Container(child: Text("Account"),)),
-    MenuItem(index: 2, text: "Settings", icon: Icons.settings, widget: Container(child: Text("Settings"),)),
+  List<MenuItem> widgets = [
+    MenuItem(
+      index: 0,
+      text: "Home Page",
+      icon: Icons.home,
+      widget: Container(child: Text("Home page")),
+    ),
+    MenuItem(
+      index: 1,
+      text: "Account",
+      icon: Icons.people,
+      widget: Container(child: Text("Account")),
+    ),
+    MenuItem(
+      index: 2,
+      text: "Settings",
+      icon: Icons.settings,
+      widget: Container(child: Text("Settings")),
+    ),
   ];
 
   @override
@@ -41,13 +55,18 @@ class _MyHomePageState extends State<MyHomePage> {
     return AppContainer(
       appBar: AppBar(
         backgroundColor: Colors.blue,
-        title: Text("Simple bottom bar example", style: TextStyle(color: Colors.white),),
+        title: Text(
+          "Simple bottom bar example",
+          style: TextStyle(color: Colors.white),
+        ),
       ),
-        widgets: widgets,
-        bottomBarConfig: BottomBarConfig(
-            activeCardColor: Colors.blue.withOpacity(0.5),
-            iconsColor: Colors.blue.withOpacity(0.5),
-            activeIconColor: Colors.white, textStyle: TextStyle(color: Colors.white)),
+      widgets: widgets,
+      bottomBarConfig: BottomBarConfig(
+        activeCardColor: Colors.blue.withOpacity(0.5),
+        iconsColor: Colors.blue.withOpacity(0.5),
+        activeIconColor: Colors.white,
+        textStyle: TextStyle(color: Colors.white),
+      ),
     );
   }
 }

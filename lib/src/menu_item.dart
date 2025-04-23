@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
 
 /// Menu item of bottom bar
-class MenuItem{
+class MenuItem {
   /// index of item
   final int index;
+
   /// text disoplay on the item
   final String text;
 
@@ -14,5 +15,10 @@ class MenuItem{
   final Widget widget;
 
   /// Menu item of appbar, is required the fields index, text, icon and widget
-  MenuItem({required this.index,required this.text,required this.icon, required this.widget});
+  MenuItem({
+    required this.index,
+    required this.text,
+    required this.icon,
+    required this.widget,
+  });
 }

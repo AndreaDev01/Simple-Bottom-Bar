@@ -14,3 +14,7 @@
 - Fix best practices and adding documentation for the objects
 - Add appbar to example
 - Upload demo gif
+
+## 0.0.4
+- Fix docs
+- Fix documentation best practices

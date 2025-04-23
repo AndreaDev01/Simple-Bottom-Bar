@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 /// include the styling for the bottom bar
-class BottomBarConfig{
+class BottomBarConfig {
   /// the color for the active card
   final Color activeCardColor;
 
@@ -14,5 +14,10 @@ class BottomBarConfig{
   // styling of text
   final TextStyle textStyle;
 
-  BottomBarConfig({required this.activeCardColor, required this.iconsColor, required this.textStyle, required this.activeIconColor});
+  BottomBarConfig({
+    required this.activeCardColor,
+    required this.iconsColor,
+    required this.textStyle,
+    required this.activeIconColor,
+  });
 }
